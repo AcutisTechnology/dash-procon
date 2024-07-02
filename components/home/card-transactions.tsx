@@ -16,7 +16,7 @@ export const CardTransactions = () => {
         </div>
 
         <div className="flex flex-col gap-6 ">
-          {data.data
+          {data?.data
             ?.map((item: any) => (
               <div
                 key={item.id}

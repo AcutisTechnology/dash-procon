@@ -20,10 +20,13 @@ export const Login = () => {
   const handleLogin = useCallback(
     async (values: LoginFormType) => {
       try {
-        const response = await axios.post("http://localhost:3000/login", {
-          email: values.email,
-          password: values.password,
-        });
+        const response = await axios.post(
+          "https://procon-back-production.up.railway.app/login",
+          {
+            email: values.email,
+            password: values.password,
+          }
+        );
 
         if (response.status === 200 && response.data) {
           localStorage.setItem("userData", JSON.stringify(response.data.user));

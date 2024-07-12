@@ -4,7 +4,6 @@ import { UsersIcon } from "@/components/icons/breadcrumb/users-icon";
 import { TableWrapper } from "@/components/table/table";
 import { Input } from "@nextui-org/react";
 import Link from "next/link";
-import { AddUser } from "./add-user";
 
 export const Accounts = () => {
   return (
@@ -39,9 +38,10 @@ export const Accounts = () => {
             placeholder="Pesquisar"
           />
         </div>
-        <div className="flex flex-row gap-3.5 flex-wrap">
+        {/* TODO: Adicionar funcionalidade de poder criar uma reclamacao */}
+        {/* <div className="flex flex-row gap-3.5 flex-wrap">
           <AddUser />
-        </div>
+        </div> */}
       </div>
       <div className="max-w-[95rem] mx-auto w-full">
         <TableWrapper />

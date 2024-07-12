@@ -1,4 +1,5 @@
 "use client";
+import { AuthProvider } from "@/contexts/AuthContext";
 import { NextUIProvider } from "@nextui-org/system";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -14,16 +15,18 @@ const queryClient = new QueryClient();
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <NextUIProvider>
-        <NextThemesProvider
-          defaultTheme="system"
-          attribute="class"
-          {...themeProps}
-        >
-          {children}
-        </NextThemesProvider>
-      </NextUIProvider>
-    </QueryClientProvider>
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <NextUIProvider>
+          <NextThemesProvider
+            defaultTheme="system"
+            attribute="class"
+            {...themeProps}
+          >
+            {children}
+          </NextThemesProvider>
+        </NextUIProvider>
+      </QueryClientProvider>
+    </AuthProvider>
   );
 }

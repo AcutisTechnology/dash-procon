@@ -1,11 +1,8 @@
 export const columns = [
-  { name: "Nome", uid: "fullName" },
-  { name: "Email", uid: "email" },
-  { name: "Celular", uid: "phone" },
-  { name: "Estabelecimento", uid: "estabelecimento" },
-  { name: "Referencia", uid: "referencia" },
-  { name: "Descrição", uid: "description" },
-  { name: "Data", uid: "createdAt" },
+  { name: "ID", uid: "id" },
+  { name: "Formulário", uid: "referer_title" },
+  { name: "Nome", uid: "name" },
+  { name: "Data", uid: "created_at" },
 ];
 
 export const columnsDenuncias = [

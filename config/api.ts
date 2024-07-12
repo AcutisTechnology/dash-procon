@@ -1,3 +1,4 @@
+import { useAuth } from "@/contexts/AuthContext";
 import axios from "axios";
 
 const api = axios.create({
@@ -13,6 +14,10 @@ api.interceptors.request.use(
     return config;
   },
   (error) => {
+    const { setToken } = useAuth();
+    if (error.response.status === 403) {
+      setToken(null);
+    }
     return Promise.reject(error);
   }
 );

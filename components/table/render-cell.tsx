@@ -10,7 +10,7 @@ export const RenderCell = ({ reclamacoes, columnKey }: Props) => {
   const cellValue = reclamacoes[columnKey];
   switch (columnKey) {
     case "name":
-      return <span>{reclamacoes.name}</span>;
+      return <span>{reclamacoes.form.name}</span>;
     default:
       return cellValue;
   }

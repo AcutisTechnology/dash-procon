@@ -1,6 +1,7 @@
 import { usePathname } from "next/navigation";
 import { AccountsIcon } from "../icons/sidebar/accounts-icon";
 import { CustomersIcon } from "../icons/sidebar/customers-icon";
+import { DevIcon } from "../icons/sidebar/dev-icon";
 import { HomeIcon } from "../icons/sidebar/home-icon";
 import { useSidebarContext } from "../layout/layout-context";
 import { CompaniesDropdown } from "./companies-dropdown";
@@ -45,6 +46,12 @@ export const SidebarWrapper = () => {
                 title="Denúncias"
                 icon={<AccountsIcon />}
                 href="denuncias"
+              />
+              <SidebarItem
+                isActive={pathname === "/posts"}
+                title="Postagens"
+                icon={<DevIcon />}
+                href="posts"
               />
               {/* <CollapseItems
                 icon={<BalanceIcon />}

@@ -18,6 +18,9 @@ api.interceptors.request.use(
     if (error.response.status === 403) {
       setToken(null);
     }
+    if (error.response.status === 401) {
+      setToken(null);
+    }
     return Promise.reject(error);
   }
 );

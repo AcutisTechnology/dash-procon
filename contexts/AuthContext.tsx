@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (token === null) {
+    if (!token) {
       router.push("/login");
     }
   }, [token, router]);
